@@ -18,7 +18,8 @@
           <TextBlock Margin="0,10,0,0" FontFamily="avares://AvaloniaApplication14/Assets/Fonts/circular_bold.ttf" Text="Made For You" Foreground="White" HorizontalAlignment="Center" FontSize="18" />
           <TextBlock HorizontalAlignment="Center" Margin="40,5,0,10" Text="Get better recommendations the more you listen." Foreground="#adaeb2" FontSize="13" />
      </StackPanel>
-      <Grid VerticalAlignment="Bottom" Background="#222326">
+    <StackPanel VerticalAlignment="Bottom">
+      <Grid  Background="#222326">
           <Grid.RowDefinitions>
               <RowDefinition Height="4" />
               <RowDefinition Height="Auto" />
@@ -43,7 +44,58 @@
           </StackPanel>
           <Image Height="40" Width="40" Margin="0,0,5,5" Source="avares://AvaloniaApplication14/Assets/icon_play_small.png" Grid.Row="1" Grid.Column="2"  />
       </Grid>
-  </Panel>
+      <Border BorderThickness="0,1,0,0" BorderBrush="#212110">
+        <Grid Background="#222327">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+          <Grid.Styles>
+            <Style Selector="Button">
+              <Setter Property="Background" Value="Transparent"/>
+            </Style>
+          </Grid.Styles>
+          <Button>
+            <StackPanel>
+              <Image Source="avares://AvaloniaApplication14/Assets/icon_home.png" Width="20" />
+              <TextBlock Text="Home"/>
+            </StackPanel>
+          </Button>
+          <Button Grid.Column="1">
+            <StackPanel>
+              <Image Source="avares://AvaloniaApplication14/Assets/icon_browse.png" Width="20" />
+              <TextBlock Text="Browse"/>
+            </StackPanel>
+          </Button>
+          <Button Grid.Column="2">
+            <StackPanel>
+              <Image Source="avares://AvaloniaApplication14/Assets/icon_search.png" Width="20" />
+              <TextBlock Text="Search"/>
+            </StackPanel>
+          </Button>
+          <Button Grid.Column="3">
+            <StackPanel>
+              <Image Source="avares://AvaloniaApplication14/Assets/icon_radio.png" Width="20" />
+              <TextBlock Text="Radio"/>
+            </StackPanel>
+          </Button>
+          <Button Grid.Column="4">
+            <StackPanel>
+              <Image Source="avares://AvaloniaApplication14/Assets/icon_library.png" Width="20" />
+              <TextBlock Text="Your Library" TextTrimming="CharacterEllipsis" />
+            </StackPanel>
+          </Button>
+        </Grid>
+      </Border>
+    
+  </StackPanel>
+</Panel>
 
 
   
