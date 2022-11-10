@@ -1,176 +1,317 @@
-<UserControl xmlns="https://github.com/avaloniaui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:asyncImageLoader="clr-namespace:AsyncImageLoader;assembly=AsyncImageLoader.Avalonia"
-             xmlns:viewModels="clr-namespace:AvaloniaApplication14.ViewModels"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="AvaloniaApplication14.Views.MainView"
-             Foreground="White"
-             Background="#181818">
-  <Design.DataContext>
-    <viewModels:MainViewModel />
-  </Design.DataContext>
-  
-  <Grid>
-    <StackPanel>
-        <Panel VerticalAlignment="Top" Background="#222327" Height="60">
-         <TextBlock Text="Home" VerticalAlignment="Center" FontWeight="Normal" FontFamily="/AvaloniaApplication14/Assets/Fonts/circular_medium.ttf" HorizontalAlignment="Center" Foreground="#FFF" FontSize="16"/>
-      </Panel>
-          <TextBlock Margin="0,10,0,0" FontFamily="avares://AvaloniaApplication14/Assets/Fonts/circular_bold.ttf" Text="Made For You" Foreground="White" HorizontalAlignment="Center" FontSize="18" />
-          <TextBlock HorizontalAlignment="Center" Margin="40,5,0,10" Text="Get better recommendations the more you listen." Foreground="#adaeb2" FontSize="13" />
-      <ItemsRepeater Margin="0,10,0,0" Items="{Binding Songs}">
-        <ItemsRepeater.Layout>
-          <StackLayout Orientation="Horizontal"/>
-        </ItemsRepeater.Layout>
-        <ItemsRepeater.ItemTemplate>
-          <DataTemplate>
-            <StackPanel Width="180" Height="200">
-              <Image asyncImageLoader:ImageLoader.Source="{Binding AlbumImageUrl}" Width="150" Height="150" />
-              <TextBlock HorizontalAlignment="Center" Margin="0,5,0,0" FontSize="13" Text="{Binding Title}" Foreground="White"/>
-              <TextBlock HorizontalAlignment="Center" Margin="0,3,0,0" FontSize="12" Text="{Binding Artist}" Foreground="#adaeb2"/>
-            </StackPanel>
-          </DataTemplate>
-        </ItemsRepeater.ItemTemplate>
-      </ItemsRepeater>
-      <TextBlock Margin="0,10,0,0" FontFamily="avares://AvaloniaApplication14/Assets/Fonts/circular_bold.ttf" Text="Jump Back In" Foreground="White" HorizontalAlignment="Center" FontSize="18" />
-      <ItemsRepeater Margin="0,15,0,0" Items="{Binding Albums}">
-        <ItemsRepeater.Layout>
-          <StackLayout Orientation="Horizontal"/>
-        </ItemsRepeater.Layout>
-        <ItemsRepeater.ItemTemplate>
-          <DataTemplate>
-            <StackPanel Width="180" Height="200">
-              <Image asyncImageLoader:ImageLoader.Source="{Binding ImageUrl}" Width="150" Height="150" />
-              <TextBlock HorizontalAlignment="Center" Margin="0,5,0,0" FontSize="13" Text="{Binding Name}" Foreground="White"/>
-              <TextBlock HorizontalAlignment="Center" Margin="0,3,0,0" FontSize="13" Text="{Binding Artist}" Foreground="#adaeb2"/>
-            </StackPanel>
-          </DataTemplate>
-        </ItemsRepeater.ItemTemplate>
-      </ItemsRepeater>
-      <TextBlock Margin="0,10,0,0" FontFamily="avares://AvaloniaApplication14/Assets/Fonts/circular_bold.ttf" Text="Recently Played" Foreground="White" HorizontalAlignment="Center" FontSize="18" />
-      <ItemsRepeater  Margin="0,15,0,0" Items="{Binding Playlists}">
-        <ItemsRepeater.Layout>
-          <StackLayout Orientation="Horizontal"/>
-        </ItemsRepeater.Layout>
-        <ItemsRepeater.ItemTemplate>
-          <DataTemplate>
-            <StackPanel Width="180" Height="200">
-              <Image asyncImageLoader:ImageLoader.Source="{Binding ImageUrl}" Width="150" Height="150" />
-              <TextBlock HorizontalAlignment="Center" Margin="0,5,0,0" FontSize="13" Text="{Binding Name}" Foreground="White"/>
-              <TextBlock HorizontalAlignment="Center" Margin="0,3,0,0" FontSize="12" Text="{Binding NrOfFollowers, StringFormat=' {0} FOLLOWERS'}" Foreground="#adaeb2"/>
-            </StackPanel>
-          </DataTemplate>
-        </ItemsRepeater.ItemTemplate>
-      </ItemsRepeater>
-     </StackPanel>
-    <StackPanel VerticalAlignment="Bottom">
-      <Grid  Background="#222126">
-          <Grid.RowDefinitions>
-              <RowDefinition Height="4" />
-              <RowDefinition Height="Auto" />
-          </Grid.RowDefinitions>
-          <Grid.ColumnDefinitions>
-              <ColumnDefinition Width="Auto" />
-              <ColumnDefinition Width="*" />
-              <ColumnDefinition Width="Auto" />
-          </Grid.ColumnDefinitions>
-        <Slider Height="10" Minimum="0" Maximum="243" Margin="0" Value="5" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Foreground="White" Background="#39393C">
-          <Slider.Resources>
-            <x:Double x:Key="SliderTrackThemeHeight">5</x:Double>
-            <x:Double x:Key="SliderHorizontalThumbWidth">3</x:Double>
-            <x:Double x:Key="SliderHorizontalThumbHeight">5</x:Double>
-            <CornerRadius x:Key="SliderThumbCornerRadius">0</CornerRadius>
-            <CornerRadius x:Key="ControlCornerRadius">0,0,0,0</CornerRadius>
-            <SolidColorBrush x:Key="SliderThumbBackground">#EEECED</SolidColorBrush>
-          </Slider.Resources>
-          <Slider.Styles>
-            <Style Selector="Slider /template/ RepeatButton#PART_DecreaseButton">
-              <Setter Property="Background" Value="#FFFFFF" />
-            </Style>
-            <Style Selector="Slider:pointerover /template/ RepeatButton#PART_DecreaseButton">
-              <Setter Property="Background" Value="#FFFFFF" />
-            </Style>
-            <Style Selector="Slider:pointerover /template/ RepeatButton#PART_IncreaseButton">
-              <Setter Property="Background" Value="#39393C" />
-            </Style>
-            <Style Selector="Slider:pointerover /template/ Thumb">
-              <Setter Property="Background" Value="#EEECED" />
-            </Style>
-          </Slider.Styles>
-        </Slider>
-          <Image Height="40" Width="40" Margin="5,0,0,5" Source="avares://AvaloniaApplication14/Assets/icon_chevron_up.png"  Grid.Row="1" Grid.Column="0" />
-          <StackPanel VerticalAlignment="Center" Margin="0,15,0,0" Height="50" Grid.Row="1" Grid.Column="1">
-              <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="2">
-                  <TextBlock FontSize="14" Foreground="#ffffff" HorizontalAlignment="Center" Text="Mercy"/>
-                  <TextBlock Margin="0,-1,0,0" Foreground="#adaeb2" HorizontalAlignment="Center" FontSize="18" Text="•"/>
-                  <TextBlock FontSize="14" Foreground="#adaeb2" HorizontalAlignment="Center" Text="Muse"/>
-              </StackPanel>
-              <StackPanel Margin="0,7,0,0" HorizontalAlignment="Center" Orientation="Horizontal">
-                  <Image Source="avares://AvaloniaApplication14/Assets/icon_devices.png" Width="20" Margin="0,-7,7,0" />
-                  <TextBlock Foreground="White" HorizontalAlignment="Center" Margin="-5,-5,0,0" FontSize="13" Text="Devices Available"/>
-              </StackPanel>
-          </StackPanel>
-          <Image Height="40" Width="40" Margin="0,0,5,5" Source="avares://AvaloniaApplication14/Assets/icon_play_small.png" Grid.Row="1" Grid.Column="2"  />
-      </Grid>
-      <Border BorderThickness="0,1,0,0" BorderBrush="#212110">
-        <Grid Background="#222327">
-          <Grid.RowDefinitions>
+<UserControl
+    x:Class="AvaloniaApplication14.Views.MainView"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:asyncImageLoader="clr-namespace:AsyncImageLoader;assembly=AsyncImageLoader.Avalonia"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="clr-namespace:AvaloniaApplication14.ViewModels"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    Background="#181818"
+    Foreground="White"
+    mc:Ignorable="d">
+    <Design.DataContext>
+        <viewModels:MainViewModel />
+    </Design.DataContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
-          </Grid.RowDefinitions>
-          <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-          </Grid.ColumnDefinitions>
-          <Grid.Styles>
-            <Style Selector="Button">
-              <Setter Property="Background" Value="Transparent"/>
-            </Style>
-            <Style Selector="Button:pointerover /template/ ContentPresenter#PART_ContentPresenter">
-              <Setter Property="Background" Value="Transparent" />
-              <Setter Property="BorderBrush" Value="Transparent" />
-              <Setter Property="Foreground" Value="{DynamicResource ButtonForegroundPointerOver}" />
-            </Style>
-          </Grid.Styles>
-          <Button>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Panel
+            Grid.Row="0"
+            Height="60"
+            VerticalAlignment="Top"
+            Background="#222327">
+            <TextBlock
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontFamily="/AvaloniaApplication14/Assets/Fonts/circular_medium.ttf"
+                FontSize="16"
+                FontWeight="Normal"
+                Foreground="#FFF"
+                Text="Home" />
+        </Panel>
+        <ScrollViewer Grid.Row="1">
             <StackPanel>
-              <Image Source="avares://AvaloniaApplication14/Assets/icon_home.png" Width="20" />
-              <TextBlock Text="Home"/>
+                <TextBlock
+                    Margin="0,10,0,0"
+                    HorizontalAlignment="Center"
+                    FontFamily="avares://AvaloniaApplication14/Assets/Fonts/circular_bold.ttf"
+                    FontSize="18"
+                    Foreground="White"
+                    Text="Made For You" />
+                <TextBlock
+                    Margin="40,5,0,10"
+                    HorizontalAlignment="Center"
+                    FontSize="13"
+                    Foreground="#adaeb2"
+                    Text="Get better recommendations the more you listen." />
+                <ItemsRepeater Margin="0,10,0,0" Items="{Binding Songs}">
+                    <ItemsRepeater.Layout>
+                        <StackLayout Orientation="Horizontal" />
+                    </ItemsRepeater.Layout>
+                    <ItemsRepeater.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Width="180" Height="200">
+                                <Image
+                                    Width="150"
+                                    Height="150"
+                                    asyncImageLoader:ImageLoader.Source="{Binding AlbumImageUrl}" />
+                                <TextBlock
+                                    Margin="0,5,0,0"
+                                    HorizontalAlignment="Center"
+                                    FontSize="13"
+                                    Foreground="White"
+                                    Text="{Binding Title}" />
+                                <TextBlock
+                                    Margin="0,3,0,0"
+                                    HorizontalAlignment="Center"
+                                    FontSize="12"
+                                    Foreground="#adaeb2"
+                                    Text="{Binding Artist}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsRepeater.ItemTemplate>
+                </ItemsRepeater>
+                <TextBlock
+                    Margin="0,10,0,0"
+                    HorizontalAlignment="Center"
+                    FontFamily="avares://AvaloniaApplication14/Assets/Fonts/circular_bold.ttf"
+                    FontSize="18"
+                    Foreground="White"
+                    Text="Jump Back In" />
+                <ItemsRepeater Margin="0,15,0,0" Items="{Binding Albums}">
+                    <ItemsRepeater.Layout>
+                        <StackLayout Orientation="Horizontal" />
+                    </ItemsRepeater.Layout>
+                    <ItemsRepeater.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Width="180" Height="200">
+                                <Image
+                                    Width="150"
+                                    Height="150"
+                                    asyncImageLoader:ImageLoader.Source="{Binding ImageUrl}" />
+                                <TextBlock
+                                    Margin="0,5,0,0"
+                                    HorizontalAlignment="Center"
+                                    FontSize="13"
+                                    Foreground="White"
+                                    Text="{Binding Name}" />
+                                <TextBlock
+                                    Margin="0,3,0,0"
+                                    HorizontalAlignment="Center"
+                                    FontSize="13"
+                                    Foreground="#adaeb2"
+                                    Text="{Binding Artist}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsRepeater.ItemTemplate>
+                </ItemsRepeater>
+                <TextBlock
+                    Margin="0,10,0,0"
+                    HorizontalAlignment="Center"
+                    FontFamily="avares://AvaloniaApplication14/Assets/Fonts/circular_bold.ttf"
+                    FontSize="18"
+                    Foreground="White"
+                    Text="Recently Played" />
+                <ItemsRepeater Margin="0,15,0,0" Items="{Binding Playlists}">
+                    <ItemsRepeater.Layout>
+                        <StackLayout Orientation="Horizontal" />
+                    </ItemsRepeater.Layout>
+                    <ItemsRepeater.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Width="180" Height="200">
+                                <Image
+                                    Width="150"
+                                    Height="150"
+                                    asyncImageLoader:ImageLoader.Source="{Binding ImageUrl}" />
+                                <TextBlock
+                                    Margin="0,5,0,0"
+                                    HorizontalAlignment="Center"
+                                    FontSize="13"
+                                    Foreground="White"
+                                    Text="{Binding Name}" />
+                                <TextBlock
+                                    Margin="0,3,0,0"
+                                    HorizontalAlignment="Center"
+                                    FontSize="12"
+                                    Foreground="#adaeb2"
+                                    Text="{Binding NrOfFollowers, StringFormat=' {0} FOLLOWERS'}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsRepeater.ItemTemplate>
+                </ItemsRepeater>
             </StackPanel>
-          </Button>
-          <Button Grid.Column="1">
-            <StackPanel>
-              <Image Source="avares://AvaloniaApplication14/Assets/icon_browse.png" Width="20" />
-              <TextBlock Foreground="#CBCCD0" Text="Browse"/>
-            </StackPanel>
-          </Button>
-          <Button Grid.Column="2">
-            <StackPanel>
-              <Image Source="avares://AvaloniaApplication14/Assets/icon_search.png" Width="20" />
-              <TextBlock Foreground="#CBCCD0" Text="Search"/>
-            </StackPanel>
-          </Button>
-          <Button Grid.Column="3">
-            <StackPanel>
-              <Image Source="avares://AvaloniaApplication14/Assets/icon_radio.png" Width="20" />
-              <TextBlock Foreground="#CBCCD0" Text="Radio"/>
-            </StackPanel>
-          </Button>
-          <Button Grid.Column="4">
-            <StackPanel Margin="-10,0,0,0">
-              <Image Source="avares://AvaloniaApplication14/Assets/icon_library.png" Width="20" />
-              <TextBlock Foreground="#CBCCD0" Text="Your Library" TextTrimming="CharacterEllipsis" />
-            </StackPanel>
-          </Button>
-        </Grid>
-      </Border>
-    
-  </StackPanel>
-</Grid>
+        </ScrollViewer>
+        <StackPanel Grid.Row="2" VerticalAlignment="Bottom">
+            <Grid Background="#222126">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Slider
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    Height="10"
+                    Margin="0"
+                    Background="#39393C"
+                    Foreground="White"
+                    Maximum="243"
+                    Minimum="0"
+                    Value="5">
+                    <Slider.Resources>
+                        <x:Double x:Key="SliderTrackThemeHeight">5</x:Double>
+                        <x:Double x:Key="SliderHorizontalThumbWidth">3</x:Double>
+                        <x:Double x:Key="SliderHorizontalThumbHeight">5</x:Double>
+                        <CornerRadius x:Key="SliderThumbCornerRadius">0</CornerRadius>
+                        <CornerRadius x:Key="ControlCornerRadius">0,0,0,0</CornerRadius>
+                        <SolidColorBrush x:Key="SliderThumbBackground">#EEECED</SolidColorBrush>
+                    </Slider.Resources>
+                    <Slider.Styles>
+                        <Style Selector="Slider /template/ RepeatButton#PART_DecreaseButton">
+                            <Setter Property="Background" Value="#FFFFFF" />
+                        </Style>
+                        <Style Selector="Slider:pointerover /template/ RepeatButton#PART_DecreaseButton">
+                            <Setter Property="Background" Value="#FFFFFF" />
+                        </Style>
+                        <Style Selector="Slider:pointerover /template/ RepeatButton#PART_IncreaseButton">
+                            <Setter Property="Background" Value="#39393C" />
+                        </Style>
+                        <Style Selector="Slider:pointerover /template/ Thumb">
+                            <Setter Property="Background" Value="#EEECED" />
+                        </Style>
+                    </Slider.Styles>
+                </Slider>
+                <Image
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Width="40"
+                    Height="40"
+                    Margin="5,0,0,5"
+                    Source="avares://AvaloniaApplication14/Assets/icon_chevron_up.png" />
+                <StackPanel
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Height="50"
+                    Margin="0,15,0,0"
+                    VerticalAlignment="Center">
+                    <StackPanel
+                        HorizontalAlignment="Center"
+                        Orientation="Horizontal"
+                        Spacing="2">
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            FontSize="14"
+                            Foreground="#ffffff"
+                            Text="Mercy" />
+                        <TextBlock
+                            Margin="0,-1,0,0"
+                            HorizontalAlignment="Center"
+                            FontSize="18"
+                            Foreground="#adaeb2"
+                            Text="•" />
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            FontSize="14"
+                            Foreground="#adaeb2"
+                            Text="Muse" />
+                    </StackPanel>
+                    <StackPanel
+                        Margin="0,7,0,0"
+                        HorizontalAlignment="Center"
+                        Orientation="Horizontal">
+                        <Image
+                            Width="20"
+                            Margin="0,-7,7,0"
+                            Source="avares://AvaloniaApplication14/Assets/icon_devices.png" />
+                        <TextBlock
+                            Margin="-5,-5,0,0"
+                            HorizontalAlignment="Center"
+                            FontSize="13"
+                            Foreground="White"
+                            Text="Devices Available" />
+                    </StackPanel>
+                </StackPanel>
+                <Image
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    Width="40"
+                    Height="40"
+                    Margin="0,0,5,5"
+                    Source="avares://AvaloniaApplication14/Assets/icon_play_small.png" />
+            </Grid>
+            <Border BorderBrush="#212110" BorderThickness="0,1,0,0">
+                <Grid Background="#222327">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.Styles>
+                        <Style Selector="Button">
+                            <Setter Property="Background" Value="Transparent" />
+                        </Style>
+                        <Style Selector="Button:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+                            <Setter Property="Background" Value="Transparent" />
+                            <Setter Property="BorderBrush" Value="Transparent" />
+                            <Setter Property="Foreground" Value="{DynamicResource ButtonForegroundPointerOver}" />
+                        </Style>
+                    </Grid.Styles>
+                    <Button>
+                        <StackPanel>
+                            <Image Width="20" Source="avares://AvaloniaApplication14/Assets/icon_home.png" />
+                            <TextBlock Text="Home" />
+                        </StackPanel>
+                    </Button>
+                    <Button Grid.Column="1">
+                        <StackPanel>
+                            <Image Width="20" Source="avares://AvaloniaApplication14/Assets/icon_browse.png" />
+                            <TextBlock Foreground="#CBCCD0" Text="Browse" />
+                        </StackPanel>
+                    </Button>
+                    <Button Grid.Column="2">
+                        <StackPanel>
+                            <Image Width="20" Source="avares://AvaloniaApplication14/Assets/icon_search.png" />
+                            <TextBlock Foreground="#CBCCD0" Text="Search" />
+                        </StackPanel>
+                    </Button>
+                    <Button Grid.Column="3">
+                        <StackPanel>
+                            <Image Width="20" Source="avares://AvaloniaApplication14/Assets/icon_radio.png" />
+                            <TextBlock Foreground="#CBCCD0" Text="Radio" />
+                        </StackPanel>
+                    </Button>
+                    <Button Grid.Column="4">
+                        <StackPanel Margin="-10,0,0,0">
+                            <Image Width="20" Source="avares://AvaloniaApplication14/Assets/icon_library.png" />
+                            <TextBlock
+                                Foreground="#CBCCD0"
+                                Text="Your Library"
+                                TextTrimming="CharacterEllipsis" />
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </Border>
+
+        </StackPanel>
+    </Grid>
 
 
-  
+
 </UserControl>
