@@ -2,7 +2,6 @@
     x:Class="AvaloniaApplication14.Views.MainView"
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:asyncImageLoader="clr-namespace:AsyncImageLoader;assembly=AsyncImageLoader.Avalonia"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="clr-namespace:AvaloniaApplication14.ViewModels"
@@ -36,131 +35,7 @@
                 Foreground="#FFF"
                 Text="Home" />
         </Panel>
-        <ScrollViewer
-            Grid.Row="1"
-            HorizontalScrollBarVisibility="Disabled"
-            VerticalScrollBarVisibility="Hidden">
-            <StackPanel>
-                <TextBlock
-                    Margin="0,10,0,0"
-                    HorizontalAlignment="Center"
-                    FontFamily="avares://AvaloniaApplication14/Assets/Fonts/circular_bold.ttf#Circular"
-                    FontSize="18"
-                    Foreground="White"
-                    Text="Made For You" />
-                <TextBlock
-                    Margin="40,5,0,10"
-                    HorizontalAlignment="Center"
-                    FontSize="13"
-                    Foreground="#adaeb2"
-                    Text="Get better recommendations the more you listen." />
-                <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled">
-                    <ItemsRepeater Margin="0,10,0,0" Items="{Binding Songs}">
-                        <ItemsRepeater.Layout>
-                            <StackLayout Orientation="Horizontal" />
-                        </ItemsRepeater.Layout>
-                        <ItemsRepeater.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel Width="180" Height="200">
-                                    <Image
-                                        Width="150"
-                                        Height="150"
-                                        asyncImageLoader:ImageLoader.Source="{Binding AlbumImageUrl}" />
-                                    <TextBlock
-                                        Margin="0,5,0,0"
-                                        HorizontalAlignment="Center"
-                                        FontFamily="avares://AvaloniaApplication14/Assets/Fonts/circular_bold.ttf#Circular"
-                                        FontSize="13"
-                                        Foreground="White"
-                                        Text="{Binding Title}" />
-                                    <TextBlock
-                                        Margin="0,3,0,0"
-                                        HorizontalAlignment="Center"
-                                        FontSize="12"
-                                        Foreground="#adaeb2"
-                                        Text="{Binding Artist}" />
-                                </StackPanel>
-                            </DataTemplate>
-                        </ItemsRepeater.ItemTemplate>
-                    </ItemsRepeater>
-
-                </ScrollViewer>
-                <TextBlock
-                    Margin="0,10,0,0"
-                    HorizontalAlignment="Center"
-                    FontFamily="avares://AvaloniaApplication14/Assets/Fonts/circular_bold.ttf#Circular"
-                    FontSize="18"
-                    Foreground="White"
-                    Text="Jump Back In" />
-                <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled">
-                    <ItemsRepeater Margin="0,15,0,0" Items="{Binding Albums}">
-                        <ItemsRepeater.Layout>
-                            <StackLayout Orientation="Horizontal" />
-                        </ItemsRepeater.Layout>
-                        <ItemsRepeater.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel Width="180" Height="200">
-                                    <Image
-                                        Width="150"
-                                        Height="150"
-                                        asyncImageLoader:ImageLoader.Source="{Binding ImageUrl}" />
-                                    <TextBlock
-                                        Margin="0,5,0,0"
-                                        HorizontalAlignment="Center"
-                                        FontFamily="avares://AvaloniaApplication14/Assets/Fonts/circular_bold.ttf#Circular"
-                                        FontSize="13"
-                                        Foreground="White"
-                                        Text="{Binding Name}" />
-                                    <TextBlock
-                                        Margin="0,3,0,0"
-                                        HorizontalAlignment="Center"
-                                        FontSize="13"
-                                        Foreground="#adaeb2"
-                                        Text="{Binding Artist}" />
-                                </StackPanel>
-                            </DataTemplate>
-                        </ItemsRepeater.ItemTemplate>
-                    </ItemsRepeater>
-                </ScrollViewer>
-                <TextBlock
-                    Margin="0,10,0,0"
-                    HorizontalAlignment="Center"
-                    FontFamily="avares://AvaloniaApplication14/Assets/Fonts/circular_bold.ttf#Circular"
-                    FontSize="18"
-                    Foreground="White"
-                    Text="Recently Played" />
-                <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled">
-                    <ItemsRepeater Margin="0,15,0,0" Items="{Binding Playlists}">
-                        <ItemsRepeater.Layout>
-                            <StackLayout Orientation="Horizontal" />
-                        </ItemsRepeater.Layout>
-                        <ItemsRepeater.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel Width="180" Height="200">
-                                    <Image
-                                        Width="150"
-                                        Height="150"
-                                        asyncImageLoader:ImageLoader.Source="{Binding ImageUrl}" />
-                                    <TextBlock
-                                        Margin="0,5,0,0"
-                                        HorizontalAlignment="Center"
-                                        FontFamily="avares://AvaloniaApplication14/Assets/Fonts/circular_bold.ttf#Circular"
-                                        FontSize="13"
-                                        Foreground="White"
-                                        Text="{Binding Name}" />
-                                    <TextBlock
-                                        Margin="0,3,0,0"
-                                        HorizontalAlignment="Center"
-                                        FontSize="12"
-                                        Foreground="#adaeb2"
-                                        Text="{Binding NrOfFollowers, StringFormat=' {0} FOLLOWERS'}" />
-                                </StackPanel>
-                            </DataTemplate>
-                        </ItemsRepeater.ItemTemplate>
-                    </ItemsRepeater>
-                </ScrollViewer>
-            </StackPanel>
-        </ScrollViewer>
+        <ContentControl x:Name="FrameContent" Grid.Row="1" />
         <StackPanel Grid.Row="2" VerticalAlignment="Bottom">
             <Grid Background="#222126">
                 <Grid.RowDefinitions>

@@ -1,4 +1,5 @@
-﻿using KickassUI.Spotify.Models;
+﻿using Egor92.MvvmNavigation;
+using KickassUI.Spotify.Models;
 using System.Collections.Generic;
 
 namespace AvaloniaApplication14.ViewModels
@@ -8,6 +9,7 @@ namespace AvaloniaApplication14.ViewModels
         public List<Album> Albums { get; set; }
         public List<Playlist> Playlists { get; set; }
         public List<Song> Songs { get; set; }
+        public NavigationManager NavigationManager { get; internal set; }
 
         public MainViewModel()
         {
