@@ -16,27 +16,11 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-
-        <Panel
-            Grid.Row="0"
-            Height="60"
-            VerticalAlignment="Top"
-            Background="#222327">
-            <TextBlock
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                FontFamily="avares://AvaloniaApplication14/Assets/Fonts/circular_medium.ttf#Circular"
-                FontSize="16"
-                FontWeight="Normal"
-                Foreground="#FFF"
-                Text="Home" />
-        </Panel>
-        <ContentControl x:Name="FrameContent" Grid.Row="1" />
-        <StackPanel Grid.Row="2" VerticalAlignment="Bottom">
+        <ContentControl x:Name="FrameContent" />
+        <StackPanel Grid.Row="1" VerticalAlignment="Bottom">
             <Grid Background="#222126">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="4" />
@@ -176,25 +160,25 @@
                             <TextBlock Text="Home" />
                         </StackPanel>
                     </Button>
-                    <Button Grid.Column="1">
+                    <Button Grid.Column="1" Command="{Binding NavigateEmptyPageCommand}">
                         <StackPanel>
                             <Image Width="20" Source="avares://AvaloniaApplication14/Assets/icon_browse.png" />
                             <TextBlock Foreground="#CBCCD0" Text="Browse" />
                         </StackPanel>
                     </Button>
-                    <Button Grid.Column="2">
+                    <Button Grid.Column="2" Command="{Binding NavigateEmptyPageCommand}">
                         <StackPanel>
                             <Image Width="20" Source="avares://AvaloniaApplication14/Assets/icon_search.png" />
                             <TextBlock Foreground="#CBCCD0" Text="Search" />
                         </StackPanel>
                     </Button>
-                    <Button Grid.Column="3">
+                    <Button Grid.Column="3" Command="{Binding NavigateEmptyPageCommand}">
                         <StackPanel>
                             <Image Width="20" Source="avares://AvaloniaApplication14/Assets/icon_radio.png" />
                             <TextBlock Foreground="#CBCCD0" Text="Radio" />
                         </StackPanel>
                     </Button>
-                    <Button Grid.Column="4">
+                    <Button Grid.Column="4" Command="{Binding NavigateEmptyPageCommand}">
                         <StackPanel Margin="-10,0,0,0">
                             <Image Width="20" Source="avares://AvaloniaApplication14/Assets/icon_library.png" />
                             <TextBlock
