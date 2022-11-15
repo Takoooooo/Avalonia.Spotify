@@ -25,7 +25,9 @@ namespace AvaloniaApplication14
                 var mainView = mainWindow.FindControl<MainView>("mainView");
 
                 var navigationManager = new NavigationManager(mainView!.FrameContent);
-                navigationManager.Register<MainPage>(NavigationKeys.MainPage, () => new MainViewModel() { NavigationManager = navigationManager });
+                var mainVm = new MainViewModel() { NavigationManager = navigationManager };
+                mainWindow.DataContext = mainVm;
+                navigationManager.Register<MainPage>(NavigationKeys.MainPage, mainVm);
                 navigationManager.Register<EmptyPage>(NavigationKeys.EmptyPage, new object());
                 navigationManager.Navigate(NavigationKeys.MainPage, null);
             }
@@ -34,7 +36,9 @@ namespace AvaloniaApplication14
                 var mainView = new MainView();
                 singleViewPlatform.MainView = mainView;
                 var navigationManager = new NavigationManager(mainView!.FrameContent);
-                navigationManager.Register<MainPage>(NavigationKeys.MainPage, () => new MainViewModel() { NavigationManager = navigationManager });
+                var mainVm = new MainViewModel() { NavigationManager = navigationManager };
+                mainView.DataContext = mainVm;
+                navigationManager.Register<MainPage>(NavigationKeys.MainPage, mainVm);
                 navigationManager.Register<EmptyPage>(NavigationKeys.EmptyPage, new object());
                 navigationManager.Navigate(NavigationKeys.MainPage, null);
             }
