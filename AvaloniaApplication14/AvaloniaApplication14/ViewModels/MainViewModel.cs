@@ -14,9 +14,11 @@ namespace AvaloniaApplication14.ViewModels
         public List<Song> Songs { get; set; }
         public NavigationManager NavigationManager { get; internal set; }
         public ReactiveCommand<Unit, Unit> NavigateEmptyPageCommand { get; set; }
+        public ReactiveCommand<Unit, Unit> NavigateMainPageCommand { get; set; }
 
         public MainViewModel()
         {
+            NavigateMainPageCommand = ReactiveCommand.Create(() => NavigationManager?.Navigate(NavigationKeys.MainPage, null));
             NavigateEmptyPageCommand = ReactiveCommand.Create(() => NavigationManager?.Navigate(NavigationKeys.EmptyPage, null));
             Albums = new List<Album>
             {

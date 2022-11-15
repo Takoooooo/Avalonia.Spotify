@@ -154,7 +154,7 @@
                             <Setter Property="Foreground" Value="{DynamicResource ButtonForegroundPointerOver}" />
                         </Style>
                     </Grid.Styles>
-                    <Button>
+                    <Button Command="{Binding NavigateMainPageCommand}">
                         <StackPanel>
                             <Image Width="20" Source="avares://AvaloniaApplication14/Assets/icon_home.png" />
                             <TextBlock Text="Home" />
