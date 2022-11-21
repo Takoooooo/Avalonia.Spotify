@@ -12,6 +12,13 @@ namespace AvaloniaApplication14.ViewModels
         public List<Album> Albums { get; set; }
         public List<Playlist> Playlists { get; set; }
         public List<Song> Songs { get; set; }
+        public Song SelectedSong { get; set; } = new Song()
+        {
+            Artist = "Muse",
+            Title = "Dig Down",
+            LengthInSeconds = 228,
+            AlbumImageUrl = "https://i.scdn.co/image/08d56eac0c7d48bb8bf7752b2202c3314db79394"
+        };
         public NavigationManager NavigationManager { get; internal set; }
         public ReactiveCommand<Unit, Unit> NavigateEmptyPageCommand { get; set; }
         public ReactiveCommand<Unit, Unit> NavigateMainPageCommand { get; set; }

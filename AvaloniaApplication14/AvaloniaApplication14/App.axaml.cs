@@ -22,25 +22,26 @@ namespace AvaloniaApplication14
             {
                 var mainWindow = new MainWindow();
                 desktop.MainWindow = mainWindow;
-                var mainView = mainWindow.FindControl<MainView>("mainView");
+                /*var mainView = */mainWindow.FindControl<MainView>("mainView").Content = new PlayerPage() { DataContext = new MainViewModel() }; ;
 
-                var navigationManager = new NavigationManager(mainView!.FrameContent);
-                var mainVm = new MainViewModel() { NavigationManager = navigationManager };
-                mainWindow.DataContext = mainVm;
-                navigationManager.Register<MainPage>(NavigationKeys.MainPage, mainVm);
-                navigationManager.Register<EmptyPage>(NavigationKeys.EmptyPage, new object());
-                navigationManager.Navigate(NavigationKeys.MainPage, null);
+                //var navigationManager = new NavigationManager(mainView!.FrameContent);
+                //var mainVm = new MainViewModel() { NavigationManager = navigationManager };
+                //mainWindow.DataContext = mainVm;
+                //navigationManager.Register<MainPage>(NavigationKeys.MainPage, mainVm);
+                //navigationManager.Register<EmptyPage>(NavigationKeys.EmptyPage, new object());
+                //navigationManager.Navigate(NavigationKeys.MainPage, null);
             }
             else if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)
             {
-                var mainView = new MainView();
-                singleViewPlatform.MainView = mainView;
-                var navigationManager = new NavigationManager(mainView!.FrameContent);
-                var mainVm = new MainViewModel() { NavigationManager = navigationManager };
-                mainView.DataContext = mainVm;
-                navigationManager.Register<MainPage>(NavigationKeys.MainPage, mainVm);
-                navigationManager.Register<EmptyPage>(NavigationKeys.EmptyPage, new object());
-                navigationManager.Navigate(NavigationKeys.MainPage, null);
+                singleViewPlatform.MainView = new PlayerPage() { DataContext = new MainViewModel() };
+                //var mainView = new MainView();
+                //singleViewPlatform.MainView = mainView;
+                //var navigationManager = new NavigationManager(mainView!.FrameContent);
+                //var mainVm = new MainViewModel() { NavigationManager = navigationManager };
+                //mainView.DataContext = mainVm;
+                //navigationManager.Register<MainPage>(NavigationKeys.MainPage, mainVm);
+                //navigationManager.Register<EmptyPage>(NavigationKeys.EmptyPage, new object());
+                //navigationManager.Navigate(NavigationKeys.MainPage, null);
             }
 
             base.OnFrameworkInitializationCompleted();
