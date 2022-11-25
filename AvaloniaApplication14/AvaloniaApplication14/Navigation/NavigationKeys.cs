@@ -2,7 +2,7 @@
 {
     public static class NavigationKeys
     {
-        public const string MainPage = "MainPage";
+        public const string HomePage = "HomePage";
         public const string EmptyPage = "EmptyPage";
     }
 }

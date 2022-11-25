@@ -7,6 +7,11 @@ using System.Reactive;
 
 namespace AvaloniaApplication14.ViewModels
 {
+    public class Navigation
+    {
+        public NavigationManager NavigationManagerChild { get; set; }
+        public NavigationManager NavigationManagerParent { get; set; }
+    }
     public class MainViewModel : ViewModelBase
     {
         public List<Album> Albums { get; set; }
@@ -19,14 +24,22 @@ namespace AvaloniaApplication14.ViewModels
             LengthInSeconds = 228,
             AlbumImageUrl = "https://i.scdn.co/image/08d56eac0c7d48bb8bf7752b2202c3314db79394"
         };
-        public NavigationManager NavigationManager { get; internal set; }
+        public Navigation NavigationManager { get; internal set; }
         public ReactiveCommand<Unit, Unit> NavigateEmptyPageCommand { get; set; }
+        public ReactiveCommand<Unit, Unit> NavigateHomePageCommand { get; set; }
         public ReactiveCommand<Unit, Unit> NavigateMainPageCommand { get; set; }
+        public ReactiveCommand<Unit, Unit> NavigatePlayerPageCommand { get; set; }
 
         public MainViewModel()
         {
-            NavigateMainPageCommand = ReactiveCommand.Create(() => NavigationManager?.Navigate(NavigationKeys.MainPage, null));
-            NavigateEmptyPageCommand = ReactiveCommand.Create(() => NavigationManager?.Navigate(NavigationKeys.EmptyPage, null));
+            NavigateHomePageCommand = ReactiveCommand.Create(() => 
+            {
+                NavigationManager?.NavigationManagerParent?.Navigate(NavigationKeysParent.MainPage, null);
+                NavigationManager?.NavigationManagerChild?.Navigate(NavigationKeys.HomePage, null);
+            });
+            NavigateMainPageCommand = ReactiveCommand.Create(() => NavigationManager?.NavigationManagerChild?.Navigate(NavigationKeys.HomePage, null));
+            NavigateEmptyPageCommand = ReactiveCommand.Create(() => NavigationManager?.NavigationManagerChild?.Navigate(NavigationKeys.EmptyPage, null));
+            NavigatePlayerPageCommand = ReactiveCommand.Create(() => NavigationManager?.NavigationManagerParent?.Navigate(NavigationKeysParent.PlayerPage, null));
             Albums = new List<Album>
             {
                 new Album()

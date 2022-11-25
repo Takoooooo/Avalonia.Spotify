@@ -31,4 +31,9 @@
   <ItemGroup>
     <ProjectReference Include="..\MvvmNavigation.Avalonia\MvvmNavigation.Avalonia.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\HomePage.axaml.cs">
+      <DependentUpon>HomePage.axaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>
