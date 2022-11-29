@@ -3,6 +3,8 @@
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
+    xmlns:ia="clr-namespace:Avalonia.Xaml.Interactions.Core;assembly=Avalonia.Xaml.Interactions"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="clr-namespace:AvaloniaApplication14.ViewModels"
     x:Name="mainView"
@@ -146,53 +148,273 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <Grid.Styles>
-                        <Style Selector="Button">
+                        <Style Selector="ToggleButton">
                             <Setter Property="Background" Value="Transparent" />
                         </Style>
-                        <Style Selector="Button:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+                        <Style Selector="ToggleButton:pointerover /template/ ContentPresenter#PART_ContentPresenter">
                             <Setter Property="Background" Value="Transparent" />
                             <Setter Property="BorderBrush" Value="Transparent" />
                             <Setter Property="Foreground" Value="{DynamicResource ButtonForegroundPointerOver}" />
                         </Style>
-                        <Style Selector="Button:pressed /template/ ContentPresenter#PART_ContentPresenter">
+                        <Style Selector="ToggleButton:pressed /template/ ContentPresenter#PART_ContentPresenter">
                             <Setter Property="Background" Value="Transparent" />
                             <Setter Property="BorderBrush" Value="Transparent" />
                             <Setter Property="Foreground" Value="{DynamicResource ButtonForegroundPointerOver}" />
+                        </Style>
+                        <Style Selector="ToggleButton:pressed /template/ ContentPresenter#PART_ContentPresenter">
+                            <Setter Property="Background" Value="Transparent" />
+                            <Setter Property="BorderBrush" Value="Transparent" />
+                            <Setter Property="Foreground" Value="{DynamicResource ButtonForegroundPointerOver}" />
+                        </Style>
+                        <Style Selector="ToggleButton:checked /template/ ContentPresenter#PART_ContentPresenter">
+                            <Setter Property="Background" Value="Transparent" />
+                            <Setter Property="BorderBrush" Value="Transparent" />
+                            <Setter Property="Foreground" Value="{DynamicResource ToggleButtonForegroundChecked}" />
+                        </Style>
+                        <Style Selector="ToggleButton:checked">
+                            <Setter Property="RenderTransform" Value="scale(1.1)" />
+                            <Setter Property="Foreground" Value="White" />
+                        </Style>
+                        <Style Selector="ToggleButton:unchecked">
+                            <Setter Property="RenderTransform" Value="scale(1.0)" />
+                            <Setter Property="Foreground" Value="#CBCCD0" />
                         </Style>
                     </Grid.Styles>
-                    <Button Command="{Binding NavigateMainPageCommand}">
+                    <ToggleButton IsChecked="True" x:Name="homeButton" Command="{Binding NavigateMainPageCommand}">
+                        <i:Interaction.Behaviors>
+                            <ia:DataTriggerBehavior
+                                Binding="{Binding #homeButton.IsChecked}"
+                                ComparisonCondition="Equal"
+                                Value="True">
+                                <ia:ChangePropertyAction
+                                    PropertyName="IsChecked"
+                                    TargetObject="browseButton"
+                                    Value="False" />
+                            </ia:DataTriggerBehavior>
+                            <ia:DataTriggerBehavior
+                                Binding="{Binding #homeButton.IsChecked}"
+                                ComparisonCondition="Equal"
+                                Value="True">
+                                <ia:ChangePropertyAction
+                                    PropertyName="IsChecked"
+                                    TargetObject="searchButton"
+                                    Value="False" />
+                            </ia:DataTriggerBehavior>
+                            <ia:DataTriggerBehavior
+                                Binding="{Binding #homeButton.IsChecked}"
+                                ComparisonCondition="Equal"
+                                Value="True">
+                                <ia:ChangePropertyAction
+                                    PropertyName="IsChecked"
+                                    TargetObject="radioButton"
+                                    Value="False" />
+                            </ia:DataTriggerBehavior>
+                            <ia:DataTriggerBehavior
+                                Binding="{Binding #homeButton.IsChecked}"
+                                ComparisonCondition="Equal"
+                                Value="True">
+                                <ia:ChangePropertyAction
+                                    PropertyName="IsChecked"
+                                    TargetObject="libraryButton"
+                                    Value="False" />
+                            </ia:DataTriggerBehavior>
+                        </i:Interaction.Behaviors>
                         <StackPanel>
                             <Image Width="20" Source="avares://AvaloniaApplication14/Assets/icon_home.png" />
-                            <TextBlock Text="Home" />
+                            <TextBlock Foreground="{Binding #homeButton.Foreground}" Text="Home" />
                         </StackPanel>
-                    </Button>
-                    <Button Grid.Column="1" Command="{Binding NavigateEmptyPageCommand}">
+                    </ToggleButton>
+                    <ToggleButton
+                        x:Name="browseButton"
+                        Grid.Column="1"
+                        Command="{Binding NavigateEmptyPageCommand}">
+                        <i:Interaction.Behaviors>
+                            <ia:DataTriggerBehavior
+                                Binding="{Binding #browseButton.IsChecked}"
+                                ComparisonCondition="Equal"
+                                Value="True">
+                                <ia:ChangePropertyAction
+                                    PropertyName="IsChecked"
+                                    TargetObject="homeButton"
+                                    Value="False" />
+                            </ia:DataTriggerBehavior>
+                            <ia:DataTriggerBehavior
+                                Binding="{Binding #browseButton.IsChecked}"
+                                ComparisonCondition="Equal"
+                                Value="True">
+                                <ia:ChangePropertyAction
+                                    PropertyName="IsChecked"
+                                    TargetObject="searchButton"
+                                    Value="False" />
+                            </ia:DataTriggerBehavior>
+                            <ia:DataTriggerBehavior
+                                Binding="{Binding #browseButton.IsChecked}"
+                                ComparisonCondition="Equal"
+                                Value="True">
+                                <ia:ChangePropertyAction
+                                    PropertyName="IsChecked"
+                                    TargetObject="radioButton"
+                                    Value="False" />
+                            </ia:DataTriggerBehavior>
+                            <ia:DataTriggerBehavior
+                                Binding="{Binding #browseButton.IsChecked}"
+                                ComparisonCondition="Equal"
+                                Value="True">
+                                <ia:ChangePropertyAction
+                                    PropertyName="IsChecked"
+                                    TargetObject="libraryButton"
+                                    Value="False" />
+                            </ia:DataTriggerBehavior>
+                        </i:Interaction.Behaviors>
                         <StackPanel>
                             <Image Width="20" Source="avares://AvaloniaApplication14/Assets/icon_browse.png" />
-                            <TextBlock Foreground="#CBCCD0" Text="Browse" />
+                            <TextBlock Foreground="{Binding #browseButton.Foreground}" Text="Browse" />
                         </StackPanel>
-                    </Button>
-                    <Button Grid.Column="2" Command="{Binding NavigateEmptyPageCommand}">
+                    </ToggleButton>
+                    <ToggleButton
+                        x:Name="searchButton"
+                        Grid.Column="2"
+                        Command="{Binding NavigateEmptyPageCommand}">
+                        <i:Interaction.Behaviors>
+                            <ia:DataTriggerBehavior
+                                Binding="{Binding #searchButton.IsChecked}"
+                                ComparisonCondition="Equal"
+                                Value="True">
+                                <ia:ChangePropertyAction
+                                    PropertyName="IsChecked"
+                                    TargetObject="browseButton"
+                                    Value="False" />
+                            </ia:DataTriggerBehavior>
+                            <ia:DataTriggerBehavior
+                                Binding="{Binding #searchButton.IsChecked}"
+                                ComparisonCondition="Equal"
+                                Value="True">
+                                <ia:ChangePropertyAction
+                                    PropertyName="IsChecked"
+                                    TargetObject="homeButton"
+                                    Value="False" />
+                            </ia:DataTriggerBehavior>
+                            <ia:DataTriggerBehavior
+                                Binding="{Binding #searchButton.IsChecked}"
+                                ComparisonCondition="Equal"
+                                Value="True">
+                                <ia:ChangePropertyAction
+                                    PropertyName="IsChecked"
+                                    TargetObject="radioButton"
+                                    Value="False" />
+                            </ia:DataTriggerBehavior>
+                            <ia:DataTriggerBehavior
+                                Binding="{Binding #searchButton.IsChecked}"
+                                ComparisonCondition="Equal"
+                                Value="True">
+                                <ia:ChangePropertyAction
+                                    PropertyName="IsChecked"
+                                    TargetObject="libraryButton"
+                                    Value="False" />
+                            </ia:DataTriggerBehavior>
+                        </i:Interaction.Behaviors>
                         <StackPanel>
                             <Image Width="20" Source="avares://AvaloniaApplication14/Assets/icon_search.png" />
-                            <TextBlock Foreground="#CBCCD0" Text="Search" />
+                            <TextBlock Foreground="{Binding #searchButton.Foreground}" Text="Search" />
                         </StackPanel>
-                    </Button>
-                    <Button Grid.Column="3" Command="{Binding NavigateEmptyPageCommand}">
+                    </ToggleButton>
+                    <ToggleButton
+                        x:Name="radioButton"
+                        Grid.Column="3"
+                        Command="{Binding NavigateEmptyPageCommand}">
+                        <i:Interaction.Behaviors>
+                            <ia:DataTriggerBehavior
+                                Binding="{Binding #radioButton.IsChecked}"
+                                ComparisonCondition="Equal"
+                                Value="True">
+                                <ia:ChangePropertyAction
+                                    PropertyName="IsChecked"
+                                    TargetObject="browseButton"
+                                    Value="False" />
+                            </ia:DataTriggerBehavior>
+                            <ia:DataTriggerBehavior
+                                Binding="{Binding #radioButton.IsChecked}"
+                                ComparisonCondition="Equal"
+                                Value="True">
+                                <ia:ChangePropertyAction
+                                    PropertyName="IsChecked"
+                                    TargetObject="searchButton"
+                                    Value="False" />
+                            </ia:DataTriggerBehavior>
+                            <ia:DataTriggerBehavior
+                                Binding="{Binding #radioButton.IsChecked}"
+                                ComparisonCondition="Equal"
+                                Value="True">
+                                <ia:ChangePropertyAction
+                                    PropertyName="IsChecked"
+                                    TargetObject="homeButton"
+                                    Value="False" />
+                            </ia:DataTriggerBehavior>
+                            <ia:DataTriggerBehavior
+                                Binding="{Binding #radioButton.IsChecked}"
+                                ComparisonCondition="Equal"
+                                Value="True">
+                                <ia:ChangePropertyAction
+                                    PropertyName="IsChecked"
+                                    TargetObject="libraryButton"
+                                    Value="False" />
+                            </ia:DataTriggerBehavior>
+                        </i:Interaction.Behaviors>
                         <StackPanel>
                             <Image Width="20" Source="avares://AvaloniaApplication14/Assets/icon_radio.png" />
-                            <TextBlock Foreground="#CBCCD0" Text="Radio" />
+                            <TextBlock Foreground="{Binding #radioButton.Foreground}" Text="Radio" />
                         </StackPanel>
-                    </Button>
-                    <Button Grid.Column="4" Command="{Binding NavigateEmptyPageCommand}">
+                    </ToggleButton>
+                    <ToggleButton
+                        x:Name="libraryButton"
+                        Grid.Column="4"
+                        Command="{Binding NavigateEmptyPageCommand}">
+                        <i:Interaction.Behaviors>
+                            <ia:DataTriggerBehavior
+                                Binding="{Binding #libraryButton.IsChecked}"
+                                ComparisonCondition="Equal"
+                                Value="True">
+                                <ia:ChangePropertyAction
+                                    PropertyName="IsChecked"
+                                    TargetObject="browseButton"
+                                    Value="False" />
+                            </ia:DataTriggerBehavior>
+                            <ia:DataTriggerBehavior
+                                Binding="{Binding #libraryButton.IsChecked}"
+                                ComparisonCondition="Equal"
+                                Value="True">
+                                <ia:ChangePropertyAction
+                                    PropertyName="IsChecked"
+                                    TargetObject="searchButton"
+                                    Value="False" />
+                            </ia:DataTriggerBehavior>
+                            <ia:DataTriggerBehavior
+                                Binding="{Binding #libraryButton.IsChecked}"
+                                ComparisonCondition="Equal"
+                                Value="True">
+                                <ia:ChangePropertyAction
+                                    PropertyName="IsChecked"
+                                    TargetObject="radioButton"
+                                    Value="False" />
+                            </ia:DataTriggerBehavior>
+                            <ia:DataTriggerBehavior
+                                Binding="{Binding #libraryButton.IsChecked}"
+                                ComparisonCondition="Equal"
+                                Value="True">
+                                <ia:ChangePropertyAction
+                                    PropertyName="IsChecked"
+                                    TargetObject="homeButton"
+                                    Value="False" />
+                            </ia:DataTriggerBehavior>
+                        </i:Interaction.Behaviors>
                         <StackPanel Margin="-10,0,0,0">
                             <Image Width="20" Source="avares://AvaloniaApplication14/Assets/icon_library.png" />
                             <TextBlock
-                                Foreground="#CBCCD0"
+                                Foreground="{Binding #libraryButton.Foreground}"
                                 Text="Your Library"
                                 TextTrimming="CharacterEllipsis" />
                         </StackPanel>
-                    </Button>
+                    </ToggleButton>
                 </Grid>
             </Border>
 
