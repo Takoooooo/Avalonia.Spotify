@@ -2,6 +2,7 @@
 using Android.Content;
 using Android.OS;
 using Avalonia.Android;
+using Avalonia.ReactiveUI;
 using Application = Android.App.Application;
 
 namespace AvaloniaApplication14.Android
@@ -11,7 +12,7 @@ namespace AvaloniaApplication14.Android
     {
         protected override Avalonia.AppBuilder CustomizeAppBuilder(Avalonia.AppBuilder builder)
         {
-            return base.CustomizeAppBuilder(builder);
+            return base.CustomizeAppBuilder(builder).UseReactiveUI();
         }
 
         protected override void OnCreate(Bundle? savedInstanceState)
