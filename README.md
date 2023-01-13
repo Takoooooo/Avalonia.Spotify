@@ -6,6 +6,9 @@ It is optimized to run on Android and iOS,but projects for WASM and Desktop are 
 
 Tested on Android, tested on iOS simulator.
 
+Everything you need to build this project is to just install corresponding workloads. 
+You can do that by running ``dotnet workload restore`` from the project folder from CLI or by manually installing workloads for the projects you want to run.
+
 ## Projects used
 
 Patched [MvvmNavigation](https://github.com/Egor92/MvvmNavigation) to implement navigation.
