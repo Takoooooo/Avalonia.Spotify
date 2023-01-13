@@ -20,6 +20,6 @@
     <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="$(AvaloniaVersion)" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AvaloniaApplication14\AvaloniaApplication14.csproj" />
+    <ProjectReference Include="..\AvaloniaApplication14\Avalonia.Spotify.csproj" />
   </ItemGroup>
 </Project>

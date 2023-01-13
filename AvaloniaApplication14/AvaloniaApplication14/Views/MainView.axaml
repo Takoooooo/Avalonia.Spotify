@@ -83,7 +83,7 @@
                     Width="40"
                     Height="40"
                     Margin="5,0,0,5"
-                    Source="avares://AvaloniaApplication14/Assets/icon_chevron_up.png" />
+                    Source="avares://Avalonia.Spotify/Assets/icon_chevron_up.png" />
                 <StackPanel
                     Grid.Row="1"
                     Grid.Column="1"
@@ -118,7 +118,7 @@
                         <Image
                             Width="20"
                             Margin="0,-7,7,0"
-                            Source="avares://AvaloniaApplication14/Assets/icon_devices.png" />
+                            Source="avares://Avalonia.Spotify/Assets/icon_devices.png" />
                         <TextBlock
                             Margin="-5,-5,0,0"
                             HorizontalAlignment="Center"
@@ -133,7 +133,7 @@
                     Width="40"
                     Height="40"
                     Margin="0,0,5,5"
-                    Source="avares://AvaloniaApplication14/Assets/icon_play_small.png" />
+                    Source="avares://Avalonia.Spotify/Assets/icon_play_small.png" />
             </Grid>
             <Border BorderBrush="#212110" BorderThickness="0,1,0,0">
                 <Grid Background="#222327">
@@ -180,7 +180,10 @@
                             <Setter Property="Foreground" Value="#CBCCD0" />
                         </Style>
                     </Grid.Styles>
-                    <ToggleButton IsChecked="True" x:Name="homeButton" Command="{Binding NavigateMainPageCommand}">
+                    <ToggleButton
+                        x:Name="homeButton"
+                        Command="{Binding NavigateMainPageCommand}"
+                        IsChecked="True">
                         <i:Interaction.Behaviors>
                             <ia:DataTriggerBehavior
                                 Binding="{Binding #homeButton.IsChecked}"
@@ -220,7 +223,7 @@
                             </ia:DataTriggerBehavior>
                         </i:Interaction.Behaviors>
                         <StackPanel>
-                            <Image Width="20" Source="avares://AvaloniaApplication14/Assets/icon_home.png" />
+                            <Image Width="20" Source="avares://Avalonia.Spotify/Assets/icon_home.png" />
                             <TextBlock Foreground="{Binding #homeButton.Foreground}" Text="Home" />
                         </StackPanel>
                     </ToggleButton>
@@ -267,7 +270,7 @@
                             </ia:DataTriggerBehavior>
                         </i:Interaction.Behaviors>
                         <StackPanel>
-                            <Image Width="20" Source="avares://AvaloniaApplication14/Assets/icon_browse.png" />
+                            <Image Width="20" Source="avares://Avalonia.Spotify/Assets/icon_browse.png" />
                             <TextBlock Foreground="{Binding #browseButton.Foreground}" Text="Browse" />
                         </StackPanel>
                     </ToggleButton>
@@ -314,7 +317,7 @@
                             </ia:DataTriggerBehavior>
                         </i:Interaction.Behaviors>
                         <StackPanel>
-                            <Image Width="20" Source="avares://AvaloniaApplication14/Assets/icon_search.png" />
+                            <Image Width="20" Source="avares://Avalonia.Spotify/Assets/icon_search.png" />
                             <TextBlock Foreground="{Binding #searchButton.Foreground}" Text="Search" />
                         </StackPanel>
                     </ToggleButton>
@@ -361,7 +364,7 @@
                             </ia:DataTriggerBehavior>
                         </i:Interaction.Behaviors>
                         <StackPanel>
-                            <Image Width="20" Source="avares://AvaloniaApplication14/Assets/icon_radio.png" />
+                            <Image Width="20" Source="avares://Avalonia.Spotify/Assets/icon_radio.png" />
                             <TextBlock Foreground="{Binding #radioButton.Foreground}" Text="Radio" />
                         </StackPanel>
                     </ToggleButton>
@@ -408,7 +411,7 @@
                             </ia:DataTriggerBehavior>
                         </i:Interaction.Behaviors>
                         <StackPanel Margin="-10,0,0,0">
-                            <Image Width="20" Source="avares://AvaloniaApplication14/Assets/icon_library.png" />
+                            <Image Width="20" Source="avares://Avalonia.Spotify/Assets/icon_library.png" />
                             <TextBlock
                                 Foreground="{Binding #libraryButton.Foreground}"
                                 Text="Your Library"

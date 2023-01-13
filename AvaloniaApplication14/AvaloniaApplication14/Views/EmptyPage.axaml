@@ -11,7 +11,7 @@
         <TextBlock
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
-            FontFamily="avares://AvaloniaApplication14/Assets/Fonts/circular_medium.ttf#Circular"
+            FontFamily="avares://Avalonia.Spotify/Assets/Fonts/circular_medium.ttf#Circular"
             FontSize="16"
             Foreground="#FFF"
             Text="Nothing to see here..." />

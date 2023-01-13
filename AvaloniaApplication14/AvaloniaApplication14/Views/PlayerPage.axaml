@@ -51,7 +51,7 @@
                 Width="30"
                 Margin="20,20,0,0"
                 HorizontalAlignment="Left"
-                Source="avares://AvaloniaApplication14/Assets/icon_chevron_down.png" />
+                Source="avares://Avalonia.Spotify/Assets/icon_chevron_down.png" />
         </Button>
 
         <StackPanel
@@ -59,14 +59,14 @@
             Margin="0,25,0,0"
             HorizontalAlignment="Center">
             <TextBlock
-                FontFamily="avares://AvaloniaApplication14/Assets/Fonts/circular_book.ttf#Circular"
+                FontFamily="avares://Avalonia.Spotify/Assets/Fonts/circular_book.ttf#Circular"
                 FontSize="12"
                 Foreground="#adaeb2"
                 Text="NOW PLAYING FROM PLAYLIST" />
             <TextBlock
                 Margin="0,5,0,0"
                 HorizontalAlignment="Center"
-                FontFamily="avares://AvaloniaApplication14/Assets/Fonts/circular_book.ttf#Circular"
+                FontFamily="avares://Avalonia.Spotify/Assets/Fonts/circular_book.ttf#Circular"
                 FontSize="12"
                 Foreground="#FFF"
                 Text="Kickass Tunes" />
@@ -76,7 +76,7 @@
             Width="30"
             Margin="0,20,20,0"
             HorizontalAlignment="Right"
-            Source="avares://AvaloniaApplication14/Assets/icon_playlist.png" />
+            Source="avares://Avalonia.Spotify/Assets/icon_playlist.png" />
         <Image
             Grid.Row="1"
             Grid.Column="0"
@@ -98,11 +98,11 @@
                     Width="30"
                     Margin="16,0,0,0"
                     HorizontalAlignment="Center"
-                    Source="avares://AvaloniaApplication14/Assets/icon_plus.png" />
+                    Source="avares://Avalonia.Spotify/Assets/icon_plus.png" />
                 <StackPanel Grid.Column="1" HorizontalAlignment="Center">
                     <TextBlock
                         HorizontalAlignment="Center"
-                        FontFamily="avares://AvaloniaApplication14/Assets/Fonts/circular_bold.ttf#Circular"
+                        FontFamily="avares://Avalonia.Spotify/Assets/Fonts/circular_bold.ttf#Circular"
                         FontSize="18"
                         Foreground="White"
                         Text="{Binding SelectedSong.Title}" />
@@ -116,7 +116,7 @@
                     Grid.Column="2"
                     Width="30"
                     Margin="0,0,16,0"
-                    Source="avares://AvaloniaApplication14/Assets/icon_ellipsis.png">
+                    Source="avares://Avalonia.Spotify/Assets/icon_ellipsis.png">
                     <Image.RenderTransform>
                         <RotateTransform Angle="90" />
                     </Image.RenderTransform>
@@ -190,14 +190,14 @@
                     <Image
                         Width="30"
                         Margin="0,0,50,0"
-                        Source="avares://AvaloniaApplication14/Assets/button_shuffle.png" />
-                    <Image Width="40" Source="avares://AvaloniaApplication14/Assets/button_back.png" />
-                    <Image Width="120" Source="avares://AvaloniaApplication14/Assets/button_play.png" />
-                    <Image Width="40" Source="avares://AvaloniaApplication14/Assets/button_forward.png" />
+                        Source="avares://Avalonia.Spotify/Assets/button_shuffle.png" />
+                    <Image Width="40" Source="avares://Avalonia.Spotify/Assets/button_back.png" />
+                    <Image Width="120" Source="avares://Avalonia.Spotify/Assets/button_play.png" />
+                    <Image Width="40" Source="avares://Avalonia.Spotify/Assets/button_forward.png" />
                     <Image
                         Width="30"
                         Margin="50,0,0,0"
-                        Source="avares://AvaloniaApplication14/Assets/button_repeat.png" />
+                        Source="avares://Avalonia.Spotify/Assets/button_repeat.png" />
                 </StackPanel>
                 <StackPanel
                     Margin="0,7,0,20"
@@ -206,7 +206,7 @@
                     <Image
                         Width="20"
                         Margin="0,-7,7,0"
-                        Source="avares://AvaloniaApplication14/Assets/icon_devices.png" />
+                        Source="avares://Avalonia.Spotify/Assets/icon_devices.png" />
                     <TextBlock
                         Margin="-5,-5,0,0"
                         HorizontalAlignment="Center"
