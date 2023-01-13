@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net7.0-ios</TargetFramework>
+    <TargetFramework>net7.0-ios16</TargetFramework>
     <SupportedOSPlatformVersion>10.0</SupportedOSPlatformVersion>
     <ProvisioningType>manual</ProvisioningType>
     <Nullable>enable</Nullable>
@@ -11,12 +11,11 @@
     <!--<RuntimeIdentifier>ios-arm64</RuntimeIdentifier>-->
     <!--<CodesignKey></CodesignKey>-->
   </PropertyGroup>
-
   <ItemGroup>
-    <PackageReference Include="Avalonia.iOS" Version="$(AvaloniaVersion)" />
+    <PackageReference Include="Avalonia.iOS" Version="11.0.0-preview4" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AvaloniaApplication14\Avalonia.Spotify.csproj" />
+    <ProjectReference Include="..\Avalonia.Spotify\Avalonia.Spotify.csproj" />
   </ItemGroup>
 </Project>

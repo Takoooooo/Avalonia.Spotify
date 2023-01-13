@@ -3,25 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avalonia.Spotify", "AvaloniaApplication14\AvaloniaApplication14\Avalonia.Spotify.csproj", "{9E883606-F0E6-4768-BAE9-FD4E63ABC844}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avalonia.Spotify", "Avalonia.Spotify\Avalonia.Spotify\Avalonia.Spotify.csproj", "{9E883606-F0E6-4768-BAE9-FD4E63ABC844}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avalonia.Spotify.Android", "AvaloniaApplication14\AvaloniaApplication14.Android\Avalonia.Spotify.Android.csproj", "{31B02E62-CD94-4A84-BD91-5D8C8F69761C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avalonia.Spotify.Android", "Avalonia.Spotify\Avalonia.Spotify.Android\Avalonia.Spotify.Android.csproj", "{31B02E62-CD94-4A84-BD91-5D8C8F69761C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avalonia.Spotify.Desktop", "AvaloniaApplication14\AvaloniaApplication14.Desktop\Avalonia.Spotify.Desktop.csproj", "{905AAC53-0970-417E-816B-2A8305E14169}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avalonia.Spotify.Desktop", "Avalonia.Spotify\Avalonia.Spotify.Desktop\Avalonia.Spotify.Desktop.csproj", "{905AAC53-0970-417E-816B-2A8305E14169}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avalonia.Spotify.iOS", "AvaloniaApplication14\AvaloniaApplication14.iOS\Avalonia.Spotify.iOS.csproj", "{B7FA18A6-0715-42F0-B1F7-FA15ABDF656A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avalonia.Spotify.iOS", "Avalonia.Spotify\Avalonia.Spotify.iOS\Avalonia.Spotify.iOS.csproj", "{B7FA18A6-0715-42F0-B1F7-FA15ABDF656A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avalonia.Spotify.Web", "AvaloniaApplication14\AvaloniaApplication14.Web\Avalonia.Spotify.Web.csproj", "{5A80162D-B466-4D9D-B97F-CDE414E0A57A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avalonia.Spotify.Web", "Avalonia.Spotify\Avalonia.Spotify.Web\Avalonia.Spotify.Web.csproj", "{5A80162D-B466-4D9D-B97F-CDE414E0A57A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Navigation", "Navigation", "{CF9959F3-00EE-4A7B-B0D0-D1D8EDA299EF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvvmNavigation.Abstractions", "AvaloniaApplication14\MvvmNavigation.Abstractions\MvvmNavigation.Abstractions.csproj", "{70CEC61B-975A-491E-B7A9-AA01B39397E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvvmNavigation.Abstractions", "Avalonia.Spotify\MvvmNavigation.Abstractions\MvvmNavigation.Abstractions.csproj", "{70CEC61B-975A-491E-B7A9-AA01B39397E1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvvmNavigation.Avalonia", "AvaloniaApplication14\MvvmNavigation.Avalonia\MvvmNavigation.Avalonia.csproj", "{9929481E-E16E-42CE-B1A4-BA6E65850AD3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvvmNavigation.Avalonia", "Avalonia.Spotify\MvvmNavigation.Avalonia\MvvmNavigation.Avalonia.csproj", "{9929481E-E16E-42CE-B1A4-BA6E65850AD3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvvmNavigation.Core", "AvaloniaApplication14\MvvmNavigation.Core\MvvmNavigation.Core.csproj", "{F525667A-4152-4D99-B609-BABFCD9D8D57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvvmNavigation.Core", "Avalonia.Spotify\MvvmNavigation.Core\MvvmNavigation.Core.csproj", "{F525667A-4152-4D99-B609-BABFCD9D8D57}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvvmNavigation.Internal", "AvaloniaApplication14\MvvmNavigation.Internal\MvvmNavigation.Internal.csproj", "{54451885-41E2-47F1-B487-243161BCA5A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvvmNavigation.Internal", "Avalonia.Spotify\MvvmNavigation.Internal\MvvmNavigation.Internal.csproj", "{54451885-41E2-47F1-B487-243161BCA5A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

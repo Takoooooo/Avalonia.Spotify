@@ -29,7 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AvaloniaApplication14\Avalonia.Spotify.csproj" />
+    <ProjectReference Include="..\Avalonia.Spotify\Avalonia.Spotify.csproj" />
   </ItemGroup>
 
 </Project>
